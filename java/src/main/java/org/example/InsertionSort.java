@@ -9,8 +9,18 @@ public class InsertionSort {
     }
 
     private void insert(int i, Comparable[] a) {
-        //Inserts the 'Transition element' into its correct position in the sorted portion of the array.
-        //TODO: TO BE IMPLEMENTED
+        Comparable key = a[i];
+        int j = i - 1; //current element store position
+
+        // Shift elements to the right if they are greater than the key
+        while (j >= 0 && a[j].compareTo(key) > 0) {
+            a[j + 1] = a[j];
+            j--;
+        }
+
+        // Place it in correct position
+        a[j + 1] = key;
+
     }
 
     private void swap(Object[] a, int i, int j) {
